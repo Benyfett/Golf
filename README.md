@@ -2,7 +2,7 @@
 
 골프 스윙 영상을 프레임 단위로 넘겨 보며 선·원을 그리고 각도를 재는 개인용 웹앱.
 
-- 앱 주소: https://benyfett.github.io/swing-frame/
+- 앱 주소: https://benyfett.github.io/Swing-Frame/
 - 폰 크롬에서 열고 메뉴 → **홈 화면에 추가**하면 주소창 없이 전체 화면으로 열립니다.
 - 영상은 폰 안에서만 처리되며 어디에도 업로드되지 않습니다.
 
