@@ -173,36 +173,40 @@ input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 
 .toast { position: fixed; left: 50%; top: calc(14px + env(safe-area-inset-top, 0px)); transform: translateX(-50%); z-index: 30; background: var(--ink); color: var(--bg); padding: 9px 14px; border-radius: 10px; font-size: 13px; max-width: calc(100% - 32px); text-align: center; line-height: 1.45; box-shadow: 0 6px 20px rgb(0 0 0 / .25); }
 @media (prefers-reduced-motion: reduce) { .switch, .switch::after { transition: none; } }
 @media (max-width: 360px) { .tool { font-size: 10px; } .readout .big { font-size: 22px; } }
-/* Landscape phone: video on the left, a compact control column on the right. */
+/* Landscape phone: video takes everything but a narrow control column on the right. */
 @media (orientation: landscape) and (max-height: 560px) {
   .app {
-    display: grid; grid-template-columns: minmax(0, 1fr) 292px; grid-template-rows: auto auto minmax(0, 1fr);
-    grid-template-areas: "stage top" "stage tools" "stage deck"; column-gap: 10px; row-gap: 6px; padding-block: 6px;
+    display: grid; grid-template-columns: minmax(0, 1fr) clamp(196px, 24vw, 228px); grid-template-rows: auto auto minmax(0, 1fr);
+    grid-template-areas: "stage top" "stage tools" "stage deck"; column-gap: 8px; row-gap: 6px; padding-block: 4px;
+    padding-left: max(8px, env(safe-area-inset-left, 0px)); padding-right: max(8px, env(safe-area-inset-right, 0px));
   }
-  .top { grid-area: top; min-height: 32px; gap: 6px; }
-  .brand { font-size: 18px; }
-  .icon-btn { width: 32px; height: 32px; }
+  .top { grid-area: top; min-height: 30px; gap: 4px; justify-content: flex-end; }
+  .brand { display: none; }
+  .seg button { padding: 4px 9px; }
+  .icon-btn { width: 30px; height: 30px; }
   .stage { grid-area: stage; }
-  .tools { grid-area: tools; gap: 0; }
-  .tools .sep { margin: 8px 2px; }
-  .tool { font-size: 0; gap: 0; padding: 7px 0; }       /* icons only; the text stays as the accessible name */
-  .deck { grid-area: deck; align-self: end; padding: 7px 10px 9px; gap: 4px; border-radius: 12px; }
-  .readout { gap: 8px; }
-  .readout .big { font-size: 21px; }
-  .readout .big small { font-size: 13px; }
-  .chip { padding: 3px 7px; }
-  input[type=range] { height: 24px; }
-  .btns { gap: 5px; }
-  .btns button { height: 38px; }
-  .btns button b { font-size: 15px; }
+  .pane { border-radius: 10px; }
+  .tools { grid-area: tools; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+  .tools .sep { display: none; }
+  .tool { font-size: 0; gap: 0; padding: 6px 0; }       /* icons only; the text stays as the accessible name */
+  .deck { grid-area: deck; align-self: end; padding: 6px 8px 8px; gap: 4px; border-radius: 12px; }
+  .readout { gap: 2px 8px; }
+  .readout .who { font-size: 16px; }
+  .readout .big { font-size: 19px; }
+  .readout .big small { font-size: 12px; }
+  .readout .chips { margin-left: 0; width: 100%; flex-wrap: wrap; gap: 4px; }
+  .chip { padding: 3px 6px; font-size: 11px; }
+  button.chip svg.i { width: 13px; height: 13px; }
+  input[type=range] { height: 22px; }
+  .btns { grid-template-columns: 1fr 1fr 1.2fr 1fr 1fr; gap: 4px; }
+  .btns button { height: 36px; font-size: 0; border-radius: 9px; }
+  .btns button b { font-size: 14px; }
+  .btns .play svg { width: 20px; height: 20px; }
   .sheet { left: 50%; right: auto; width: min(560px, 100%); transform: translateX(-50%); }
 }
-@media (orientation: landscape) and (max-height: 330px) {
-  .brand { display: none; }
-  .top { justify-content: flex-end; }
-  
-  .btns button { height: 34px; font-size: 0; }
-  .btns button b { font-size: 15px; }
+@media (orientation: landscape) and (max-height: 300px) {
+  .tool { padding: 4px 0; }
+  .btns button { height: 32px; }
 }
 </style>
 
