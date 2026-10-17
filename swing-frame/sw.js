@@ -1,5 +1,5 @@
 // Network first, so a new version shows up as soon as it is deployed; the cache only serves when offline.
-const CACHE = "swing-frame-v2";
+const CACHE = "swing-frame-v3";
 const CORE = ["./", "index.html", "sample.mp4", "manifest.webmanifest", "icon-192.png", "icon-512.png"];
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE)).then(() => self.skipWaiting()));
