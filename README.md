@@ -1,6 +1,6 @@
 # 골프
 
-현우의 개인용 골프 웹앱 모음. GitHub Pages로 배포됩니다.
+개인용 골프 웹앱 모음. GitHub Pages로 배포됩니다.
 
 - 모음 페이지: https://benyfett.github.io/Golf/
 - 스윙 프레임: https://benyfett.github.io/Golf/swing-frame/
